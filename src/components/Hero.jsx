@@ -113,7 +113,7 @@ export default function Hero() {
              {/* Profile Image container */}
              <div className="absolute inset-4 z-10 border-2 border-light-border dark:border-dark-border rounded-full sm:rounded-2xl overflow-hidden bg-light-surface dark:bg-dark-surface shadow-xl">
                <img
-                 src="/images/RP 1.jpg"
+                 src="/images/RP-1.jpg"
                  alt="Rudra Patel Profile"
                  className="w-full h-full object-cover animate-pulse-slow"
                  style={{ animation: 'float 6s ease-in-out infinite' }}
@@ -147,7 +147,7 @@ export default function Hero() {
           {/* Mobile simple image fallback */}
           <div className="md:hidden w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-light-primary/30 dark:border-dark-primary/30 z-10">
               <img
-                 src="/images/RP 1.jpg"
+                 src="/images/RP-1.jpg"
                  alt="Rudra Patel Profile"
                  className="w-full h-full object-cover"
                />
