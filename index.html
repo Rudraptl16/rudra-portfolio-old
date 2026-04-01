@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/LOGO RP.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rudra Patel | Full-Stack & Mobile App Developer</title>
+    <meta name="description" content="Rudra Patel is a Full-Stack and Mobile App Developer specializing in React, Node.js, and Flutter. Available for freelance work." />
+    <meta name="keywords" content="Rudra Patel, Full-Stack Developer, Mobile App Developer, React, Flutter, Node.js" />
+    <!-- Preemptively set dark mode to prevent FOUC -->
+    <script>
+      (function() {
+        try {
+          var isDark = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

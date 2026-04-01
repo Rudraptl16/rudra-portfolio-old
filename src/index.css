@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light-bg text-light-textMain font-body antialiased transition-colors duration-300;
+  }
+  
+  html.dark body {
+    @apply bg-dark-bg text-dark-textMain;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-light-textMain tracking-tight;
+  }
+
+  html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+    @apply text-dark-textMain;
+  }
+  
+  p {
+    @apply text-light-textMuted leading-relaxed;
+  }
+  
+  html.dark p {
+    @apply text-dark-textMuted;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-light-surface dark:bg-dark-surface;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-light-border dark:bg-dark-border rounded-full hover:bg-light-textMuted dark:hover:bg-dark-textMuted transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-light-primary to-light-secondary dark:from-dark-primary dark:to-dark-secondary;
+  }
+  
+  .card {
+    @apply bg-light-surface dark:bg-dark-surface rounded-2xl border border-light-border dark:border-dark-border shadow-sm hover:shadow-md transition-all duration-300;
+  }
+}
+
+/* Base styles for typing animation cursor */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
