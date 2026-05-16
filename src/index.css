@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Premium Simple & Professional Palette */
+  --color-dark-bg: #030014;
+  --color-dark-surface: #0a0f1e;
+  --color-dark-primary: #a855f7; /* Purple */
+  --color-dark-secondary: #ec4899; /* Pink */
+  --color-dark-accent: #3b82f6; /* Blue */
+  --color-dark-textMain: #f8fafc;
+  --color-dark-textMuted: #94a3b8;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+
+  /* Improved Fonts */
+  --font-display: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+
+  /* Spacing */
+  --spacing-section: 6rem;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-dark-textMain font-body antialiased transition-colors duration-500 selection:bg-dark-primary/30 selection:text-white;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-dark-textMain tracking-tighter font-extrabold;
+    line-height: 1.1;
+  }
+  
+  p {
+    @apply text-dark-textMuted leading-relaxed;
+    letter-spacing: -0.011em;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-bg;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full border-2 border-solid border-dark-bg hover:bg-dark-primary transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-dark-primary via-dark-secondary to-dark-accent;
+  }
+
+  .text-gradient-purple {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500;
+  }
+
+  .text-gradient-blue {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500;
+  }
+  
+  .glass {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    @apply rounded-[2.5rem] transition-all duration-500 hover:border-dark-primary/30 hover:bg-white/[0.04] shadow-2xl shadow-black/40;
+  }
+
+  .glass-morphism {
+    background-color: rgba(3, 0, 20, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    @apply rounded-2xl;
+  }
+  
+  .glow-primary {
+    @apply relative after:absolute after:inset-0 after:rounded-full after:bg-dark-primary/20 after:blur-[100px] after:-z-10;
+  }
+
+  .section-padding {
+    @apply py-24 px-6 md:px-12 lg:px-24;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-dark-primary to-dark-secondary text-white font-bold tracking-wider uppercase rounded-xl shadow-xl shadow-dark-primary/20 hover:scale-[1.02] active:scale-95 transition-all;
+  }
+
+  .btn-glass {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    @apply px-8 py-4 text-white font-bold tracking-wider uppercase rounded-xl hover:bg-white/5 active:scale-95 transition-all;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 10s ease-in-out infinite;
+}
+
+/* Star Background */
+.star-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-dark-primary);
+  border-radius: 10px;
+}
